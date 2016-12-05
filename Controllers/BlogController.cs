@@ -21,6 +21,13 @@ namespace GBK.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Add(Blog blog)
+        {
+            db.Blogs.Add(blog);
+            db.SaveChanges();
+            return RedirectToAction("Posts");
+        }
         public IActionResult Posts()
         {
             return View(db.Blogs.ToList());

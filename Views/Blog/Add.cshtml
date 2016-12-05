@@ -2,9 +2,27 @@
     ViewData["Title"] = "Add a Blog Post";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model GBK.Models.Blog
 
     <h1>add a blog post</h1>
+<hr />
     <h4>form:</h4>
     <h4>form:title</h4>
     <h4>form:author</h4>
     <h4>form:blog-text</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+
+    @Html.LabelFor(model => model.Author)
+    @Html.TextBoxFor(model => model.Author)
+
+    @Html.LabelFor(model => model.Text)
+    @Html.TextBoxFor(model => model.Text)
+
+<input type="submit" value="Add new Post" />
+}
+
+<p>@Html.ActionLink("Back to list", "Posts")</p>

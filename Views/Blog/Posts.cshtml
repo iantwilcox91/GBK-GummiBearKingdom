@@ -7,11 +7,11 @@
     <p>list of posts</p>
 
 
-<h4>@Html.DisplayNameFor(model => model.Title)</h4>
 <ul>
     @foreach (var listBlog in Model)
     {
-        <li>@Html.DisplayFor(modelItem => listBlog.Author) ~ @Html.DisplayFor(modelItem => listBlog.Text)</li>
+        <li>@Html.DisplayFor(modelItem => listBlog.Title) ~by: @Html.DisplayFor(modelItem => listBlog.Author)</li>
+        <li>@Html.DisplayFor(modelItem => listBlog.Text)</li>
     }
 </ul>
 
