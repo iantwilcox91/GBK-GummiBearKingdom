@@ -48,7 +48,7 @@ namespace GBK
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Blog}/{action=Index}/{id?}");
             });
 
 
