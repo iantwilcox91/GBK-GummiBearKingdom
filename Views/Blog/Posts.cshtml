@@ -3,15 +3,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model IEnumerable<GBK.Models.Blog>
-    <p>Current Posts:</p>
-
-
-<ul>
+<h1>Current Posts:</h1>
+@*<ul>
     @foreach (var listBlog in Model)
     {
         <li>@Html.DisplayFor(modelItem => listBlog.Title) ~by: @Html.DisplayFor(modelItem => listBlog.Author)</li>
         <li>@Html.DisplayFor(modelItem => listBlog.Text)</li>
+        <br />
     }
-</ul>
+</ul>*@
 
+@foreach (var Blog in Model.OrderByDescending(i => i.BlogId))
+{
+<div class="container">
+    <div>
+        <h3>Title: @Html.DisplayFor(product => Blog.Title)</h3>
+    </div>
+    <div>
+        <h3>By: @Html.DisplayFor(product => Blog.Author)</h3>
+    </div>
+    <div>
+        <h3>Content: @Html.DisplayFor(product => Blog.Text)</h3>
+    </div>
+</div>
+    <hr />
+}
+<br />
 <p>@Html.ActionLink("Add a Blog Post", "Add")</p>
