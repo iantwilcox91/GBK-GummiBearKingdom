@@ -2,7 +2,15 @@
     ViewData["Title"] = "Product List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model IEnumerable<GBK.Models.Product>
     <h1>products</h1>
     <h3>full list (just name) - each clickable - go to details page</h3>
 
-    <p> button - add new</p>
+<ul>
+    @foreach (var listProduct in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => listProduct.Name)</li>
+    }
+</ul>
+
+    <a href="http://localhost:62689/products/Create">Add a new Product</a>

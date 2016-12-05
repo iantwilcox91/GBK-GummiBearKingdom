@@ -2,9 +2,22 @@
     ViewData["Title"] = "Add Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <h1>create</h1>
+@model GBK.Models.Product
 
-    <h3>form:</h3>
-    <h4>name</h4>
-    <h4>cost</h4>
-    <h4>country</h4>
+<h1>add a Product</h1>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <br />
+    @Html.LabelFor(model => model.Cost)
+    @Html.TextBoxFor(model => model.Cost)
+    <br />
+    @Html.LabelFor(model => model.Country)
+    @Html.TextBoxFor(model => model.Country)
+    <br />
+    <input type="submit" value="Add new Product" />
+}
+<br />
+<p>@Html.ActionLink("Back to list", "Index")</p>
