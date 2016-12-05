@@ -9,8 +9,8 @@
 <ul>
     @foreach (var listProduct in Model)
     {
-        <li>@Html.DisplayFor(modelItem => listProduct.Name)</li>
+        <li>@Html.DisplayFor(modelItem => listProduct.Name)  ---@Html.ActionLink("Details", "Details", new { id = listProduct.ProductId })</li>
     }
 </ul>
 
-    <a href="http://localhost:62689/products/Create">Add a new Product</a>
+<p>@Html.ActionLink("Add a new Product", "Create")</p>

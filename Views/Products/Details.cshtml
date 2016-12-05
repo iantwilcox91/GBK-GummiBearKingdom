@@ -2,11 +2,16 @@
     ViewData["Title"] = "Product Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <h1>details page:</h1>
-    <h3>selected item</h3>
-    <h4>name</h4>
-    <h4>cost</h4>
-    <h4>country</h4>
+@model GBK.Models.Product
 
-    <p>button - edit - route products/edit</p>
-    <p>button - delete - route products/index</p>
+<h1>details page:</h1>
+
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<br />
+@Html.DisplayNameFor(model => model.Cost): $ @Html.DisplayFor(model => model.Cost)<br />
+@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)<br />
+
+<br />
+
+@Html.ActionLink("Edit", "Edit", new { id = Model.ProductId })
+<br />
+@Html.ActionLink("Delete", "Delete", new { id = Model.ProductId })
